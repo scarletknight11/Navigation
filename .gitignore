@@ -60,3 +60,5 @@ crashlytics-build.properties
 
 # emacs swap
 *~
+*.blend1
+*.blend1.meta
