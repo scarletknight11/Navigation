@@ -9,6 +9,7 @@ public class SimpleAgentController : MonoBehaviour
     public float waitTime = 1.0f;
     public float deviation = 0.5f;
     public float wanderZone = 8;
+    public float minWander = 4;
 
     private bool moving = false;
     private bool wandering = true;
@@ -16,10 +17,18 @@ public class SimpleAgentController : MonoBehaviour
 
     Vector3 randomPosition()
     {
-	Vector3 direction = Random.insideUnitSphere * wanderZone;
-	Vector3 newPos = transform.position + direction;
+	int tries = 4;
 	NavMeshHit hit;
-	NavMesh.SamplePosition(newPos, out hit, wanderZone, 1);
+	Vector3 direction;
+	Vector3 newPos;
+	do
+	{
+	    direction = Random.insideUnitSphere * Random.Range(minWander, wanderZone);
+	    newPos = transform.position + direction;
+	    NavMesh.SamplePosition(newPos, out hit, wanderZone, 1);
+	    tries--;
+	} while (Vector3.Distance(transform.position, hit.position) < minWander
+		 && tries > 0);
 	return hit.position;
     }
     
