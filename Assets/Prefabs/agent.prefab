@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 5943915155161714591}
   - component: {fileID: 5943915155161714560}
   - component: {fileID: 5943915155161714563}
+  - component: {fileID: 1070732902}
   m_Layer: 0
   m_Name: agent
   m_TagString: Untagged
@@ -228,3 +229,18 @@ MonoBehaviour:
   waitTime: 1
   deviation: 0.5
   wanderZone: 4
+  minWander: 4
+--- !u!114 &1070732902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5943915155161714590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171945524d4586547ba5a65c204c65ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  agent: {fileID: 5943915155161714560}

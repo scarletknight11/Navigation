@@ -12,7 +12,7 @@ public class SimpleAgentController : MonoBehaviour
     public float minWander = 4;
 
     private bool moving = false;
-    private bool wandering = true;
+    private bool wandering = false;
     private float time = 0.0f;
 
     Vector3 randomPosition()
