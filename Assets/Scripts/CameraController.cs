@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float cameraSpeed = 1.5f;
+    public float mouseXSpeed = 6f;
+    public float mouseYSpeed = 2.5f;
     public float moveSpeed = 3.0f;
 
     private Vector2 rotation;
@@ -17,9 +18,9 @@ public class CameraController : MonoBehaviour
     void Update()
     {
 	// move camera
-	rotation.y += Input.GetAxis("Mouse X");
-	rotation.x += -Input.GetAxis("Mouse Y");
-	transform.eulerAngles = (Vector2)rotation * cameraSpeed;
+	rotation.y += Input.GetAxis("Mouse X") * mouseXSpeed;
+	rotation.x += -Input.GetAxis("Mouse Y") * mouseYSpeed;
+	transform.eulerAngles = (Vector2)rotation;
     }
 
     void FixedUpdate()
