@@ -34,12 +34,10 @@ public class AutoObstacleController : MonoBehaviour
 	    {
 		if (next == 0 || next == waypoints.Length - 1)
 		{
-		    Debug.Log("switch");
 		    increment *= -1;
 		}
 		timer = wait;
 		next += increment;
-		Debug.Log("inc"+next.ToString());
 	    }
 	    else
 	    {
