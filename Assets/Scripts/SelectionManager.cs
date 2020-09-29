@@ -6,12 +6,12 @@ public class SelectionManager : MonoBehaviour {
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
 
+
     //private Transform _selection;
  
 
     // Update is called once per frame
-    private void Update()
-    {
+    private void Update() {
         //if (_selection != null)
         //{
         //    var selectionRenderer = _selection.GetComponent<Renderer>();
@@ -34,5 +34,6 @@ public class SelectionManager : MonoBehaviour {
                 }    
             }
         }
+
     }
 }
