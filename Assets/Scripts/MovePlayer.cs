@@ -47,7 +47,10 @@ public class MovePlayer : MonoBehaviour {
 
     private void SetDestination(Vector3 target)
     {
-        myNavMeshAgent.SetDestination(target);
+            myNavMeshAgent.SetDestination(target);
+            GetComponent<Renderer>().material = defaultMaterial;
+
+
     }
 
     private void OnMouseDown()
@@ -69,7 +72,7 @@ public class MovePlayer : MonoBehaviour {
                 var selectionRenderer = selection.GetComponent<Renderer>();
                 if (selectionRenderer != null) {
                     selectionRenderer.material = highlightMaterial;
-                }
+                }  
 
             }
         }
@@ -82,6 +85,8 @@ public class MovePlayer : MonoBehaviour {
 
     public void DeselectCharacter() {
         isSelected = false;
+        GetComponent<Renderer>().material = defaultMaterial;
+
     }
 
 }
