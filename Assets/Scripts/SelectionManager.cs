@@ -1,23 +1,13 @@
 ﻿using UnityEngine;
- 
-public class SelectionManager : MonoBehaviour {
+
+public class SelectionManager : MonoBehaviour  {
 
     [SerializeField] private string selectableTag = "Selectable";
     [SerializeField] private Material highlightMaterial;
     [SerializeField] private Material defaultMaterial;
 
-
-    //private Transform _selection;
- 
-
     // Update is called once per frame
     private void Update() {
-        //if (_selection != null)
-        //{
-        //    var selectionRenderer = _selection.GetComponent<Renderer>();
-        //    selectionRenderer.material = defaultMaterial;
-        //    _selection = null;
-        //}
         if (Input.GetMouseButtonDown(0))  {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -30,10 +20,8 @@ public class SelectionManager : MonoBehaviour {
                     if (selectionRenderer != null) {
                         selectionRenderer.material = highlightMaterial;
                     }
-                    //_selection = selection;
                 }    
             }
         }
-
     }
 }

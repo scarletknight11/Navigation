@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Fire
   - Selectable
+  - Coin
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - 
   - walls
-  - 
+  - ClickableObjects
   - 
   - 
   - 
