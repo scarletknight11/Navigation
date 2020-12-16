@@ -1276,7 +1276,7 @@ PrefabInstance:
     - target: {fileID: 2972952055649574024, guid: 4ffdcfb784c914d47a943f7ceae75ee9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 22.65
+      value: 16.19
       objectReference: {fileID: 0}
     - target: {fileID: 2972952055649574024, guid: 4ffdcfb784c914d47a943f7ceae75ee9,
         type: 3}
@@ -1301,7 +1301,7 @@ PrefabInstance:
     - target: {fileID: 2972952055649574024, guid: 4ffdcfb784c914d47a943f7ceae75ee9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2972952055649574024, guid: 4ffdcfb784c914d47a943f7ceae75ee9,
         type: 3}
@@ -1318,6 +1318,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2972952055649574024, guid: 4ffdcfb784c914d47a943f7ceae75ee9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.9982014
+      objectReference: {fileID: 0}
     - target: {fileID: 2972952055649574028, guid: 4ffdcfb784c914d47a943f7ceae75ee9,
         type: 3}
       propertyPath: m_Name
@@ -1326,25 +1331,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2972952055649574038, guid: 4ffdcfb784c914d47a943f7ceae75ee9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ffdcfb784c914d47a943f7ceae75ee9, type: 3}
---- !u!1 &484964196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2972952055649574028, guid: 4ffdcfb784c914d47a943f7ceae75ee9,
-    type: 3}
-  m_PrefabInstance: {fileID: 484964195}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &484964197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484964196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee6c56d91d7d4e44b811f597165c6ff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 3
 --- !u!1001 &542199658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1456,7 +1442,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 542199658}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &542199661
+--- !u!114 &542199662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1465,12 +1451,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 542199660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0
 --- !u!1001 &547330202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1576,7 +1562,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 547330202}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &547330204
+--- !u!114 &547330205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1585,12 +1571,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 547330203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0
 --- !u!1001 &555397418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2459,7 +2445,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -2473,6 +2459,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2545,6 +2532,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 12.684001, y: -38.136, z: -0.47500002}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c1abb2285501a4189015fe19b3f623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickablersLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3074,7 +3076,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1070334073}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1070334076
+--- !u!114 &1070334077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3083,12 +3085,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1070334075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0
 --- !u!1 &1189277391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3288,7 +3290,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1212351469}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1212351471
+--- !u!114 &1212351472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3297,12 +3299,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1212351470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0
 --- !u!1 &1251612605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,7 +3645,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 23268598c86d64c1a866b4a5db71247c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 23268598c86d64c1a866b4a5db71247c,
         type: 3}
@@ -3809,7 +3811,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1440933841}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1440933844
+--- !u!114 &1440933845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3818,12 +3820,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1440933843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0
 --- !u!1 &1441774168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4059,7 +4061,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1489424716}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1489424719
+--- !u!114 &1489424720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4068,12 +4070,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1489424718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0
 --- !u!1001 &1534712465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4179,7 +4181,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1534712465}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1534712467
+--- !u!114 &1534712468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4188,12 +4190,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1534712466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0
 --- !u!1 &1544987540
 GameObject:
   m_ObjectHideFlags: 0
@@ -4608,7 +4610,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1700232801}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1700232804
+--- !u!114 &1700232805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4617,12 +4619,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1700232803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0
 --- !u!1 &1756325982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,7 +5483,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5943915155059366290}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5943915155059366292
+--- !u!114 &5943915155059366293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5490,9 +5492,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5943915155059366291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa5a051a8a32b1478c18d22026690a8, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectableTag: Selectable
-  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  highlightMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  currentlySelected: 0

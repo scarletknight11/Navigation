@@ -23,8 +23,7 @@ public class MovePlayer : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetMouseButtonDown(1) && isSelected) 
-        {
+        if (Input.GetMouseButtonDown(1) && isSelected) {
             ClickToMove();
         }
     }
@@ -33,25 +32,18 @@ public class MovePlayer : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         bool hasHit = Physics.Raycast(ray, out hit);
-       // var selection = hit.transform;
-        //if (Physics.Raycast(ray, out hit))
-        //{
-            if (hasHit) {
-                //var selectionRenderer = selection.GetComponent<Renderer>();
-                SetDestination(hit.point);
-                isSelected = false;
-                //selectionRenderer.material = defaultMaterial;
-            }
-        //}
+         if (hasHit) {
+              SetDestination(hit.point);
+              isSelected = false;
+         }
     }
 
-    private void SetDestination(Vector3 target)
-    {
-        myNavMeshAgent.SetDestination(target);
+    private void SetDestination(Vector3 target) {
+            myNavMeshAgent.SetDestination(target);
+            GetComponent<Renderer>().material = defaultMaterial;
     }
 
-    private void OnMouseDown()
-    {
+    private void OnMouseDown() {
         //If the character is clicked with left mouse button
         if (mySelectionController.currentlySelectedCharacter != gameObject && mySelectionController.currentlySelectedCharacter != null)
         {
@@ -62,26 +54,21 @@ public class MovePlayer : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-
             var selection = hit.transform;
             if (selection.CompareTag(selectableTag)) {
 
                 var selectionRenderer = selection.GetComponent<Renderer>();
                 if (selectionRenderer != null) {
                     selectionRenderer.material = highlightMaterial;
-                }
-
+                }  
             }
         }
-
         isSelected = true;
         mySelectionController.SelectCharacter(gameObject);
-
-
     }
 
     public void DeselectCharacter() {
         isSelected = false;
+        GetComponent<Renderer>().material = defaultMaterial;
     }
-
 }
