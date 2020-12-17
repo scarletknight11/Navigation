@@ -1,77 +1,86 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Click : MonoBehaviour {
 
     [SerializeField]
-    private LayerMask clickablersLayer;
+    private LayerMask clickableLayer;
 
-    private List<GameObject> selectedObjects;
+    private List<ClickOn> selectedObjects;
 
     void Start()
     {
-        selectedObjects = new List<GameObject>();
+        selectedObjects = new List<ClickOn>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(1))
+	RaycastHit rayHit;
+	// rightclick
+        if(Input.GetMouseButtonUp(1))
         {
+	    Debug.Log("right");
+	    // get clicked point in the world
+	    Physics.Raycast(
+		Camera.main.ScreenPointToRay(Input.mousePosition),
+		out rayHit
+	    );
+
+	    // find closest point on nav mesh within 5u
+	    NavMeshHit navHit;
+	    var found = NavMesh.SamplePosition(
+		rayHit.point,
+		out navHit,
+		5f,
+		NavMesh.AllAreas
+	    );
+
+	    if (!found)
+	    {
+		Debug.LogError("couldn't find suitable point");
+		return;
+	    }
+	    Debug.Log(selectedObjects.Count);
+	    // move selected agents to point and reset selection
             if (selectedObjects.Count > 0)
             {
-                foreach (GameObject obj in selectedObjects)
+                foreach (var obj in selectedObjects)
                 {
-                    obj.GetComponent<ClickOn>().currentlySelected = false;
-                    obj.GetComponent<ClickOn>().ClickMe();
+                    obj.selected = false;
+		    obj.SetDestination(navHit.position);
                 }
 
                 selectedObjects.Clear();
             }
         }
-
-        if(Input.GetMouseButtonDown(0))
+	// left click
+        else if(Input.GetMouseButtonDown(0))
         {
-            RaycastHit rayHit;
+	    Debug.Log("left");
+	    // find clicked object
+	    var found = Physics.Raycast(
+		Camera.main.ScreenPointToRay(Input.mousePosition),
+		out rayHit,
+		clickableLayer
+	    );
 
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out rayHit, clickablersLayer))
-            {
-                ClickOn clickOnScript = rayHit.collider.GetComponent<ClickOn>();
+	    if (!found) return;
+	    ClickOn clickOnScript = rayHit.collider.gameObject.GetComponent<ClickOn>();
+	    if (clickOnScript == null) return;
 
-                if (Input.GetMouseButtonDown(0))
-                {
-                    if (clickOnScript.currentlySelected == false)
-                    {
-                        selectedObjects.Add(rayHit.collider.gameObject);
-                        clickOnScript.currentlySelected = true;
-                        clickOnScript.ClickMe();
-                    } 
-                    else
-                    {
-                        selectedObjects.Remove(rayHit.collider.gameObject);
-                        clickOnScript.currentlySelected = false;
-                        clickOnScript.ClickMe();
-                    }
-                } else
-                {
-                    if (selectedObjects.Count > 0)
-                    {
-                        foreach (GameObject obj in selectedObjects)
-                        {
-                            obj.GetComponent<ClickOn>().currentlySelected = false;
-                            obj.GetComponent<ClickOn>().ClickMe();
-                        }
-
-                        selectedObjects.Clear();
-                    }
-
-                    selectedObjects.Add(rayHit.collider.gameObject);
-                    clickOnScript.currentlySelected = true;
-                    clickOnScript.ClickMe();
-                }
-                
-            }
-        }
+	    // toggle the clicked object
+	    if (!clickOnScript.selected)
+	    {
+		selectedObjects.Add(clickOnScript);
+	    }
+	    else
+	    {
+		selectedObjects.Remove(clickOnScript);
+	    }
+	    clickOnScript.selected = !clickOnScript.selected;
+	}
     }
 }
