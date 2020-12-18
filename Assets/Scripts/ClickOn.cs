@@ -14,6 +14,7 @@ public class ClickOn : MonoBehaviour {
 
     private NavMeshAgent myNavMeshAgent;
     private SelectionController mySelectionController;
+    private BrakeController brake;
 
     private bool _selected = false;
     public bool selected
@@ -35,10 +36,12 @@ public class ClickOn : MonoBehaviour {
         myNavMeshAgent = GetComponent<NavMeshAgent>();
         mySelectionController = FindObjectOfType<SelectionController>();
         myRend = GetComponent<MeshRenderer>();
+	brake = GetComponent<BrakeController>();
     }
 
     public void SetDestination(Vector3 target)
     {
+	brake.Release();
         myNavMeshAgent.SetDestination(target);
     }
 

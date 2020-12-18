@@ -3,48 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(NavMeshObstacle))]
 public class BrakeController : MonoBehaviour
 {
-    private List<GameObject> collidedAgents = new List<GameObject>();
+    public float stopCoef = 3.0f;
+    public float stopDist = 0.2f;
+    
+    private NavMeshObstacle obstacle;
     private NavMeshAgent agent;
+    private Viewer viewer;
+    private int neighboors = 0;
 
-    void Start()
+    void Start() {
+        obstacle = GetComponent<NavMeshObstacle>();
+	agent = GetComponent<NavMeshAgent>();
+	viewer = GetComponentInChildren<Viewer>();
+    }
+
+    public void Release()
     {
-	agent = GetComponentInParent<NavMeshAgent>();
+	obstacle.enabled = false;
+	agent.enabled = true;
     }
     
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
-	Debug.Log("enter");
-	if (other.gameObject.GetComponent<NavMeshAgent>() != null)
+	neighboors = viewer.neighboors;
+	float dist = Vector3.Distance(transform.position, agent.destination);
+	Debug.Log(name + "| " + neighboors + " " + dist);
+	if (dist < stopCoef * neighboors || dist < stopDist)
 	{
-	    lock(collidedAgents)
-	    {
-		Debug.Log("agent enter" + collidedAgents.Count.ToString());
-		if (collidedAgents.Count == 0)
-		{
-		    agent.isStopped = true;
-		}
-		collidedAgents.Add(other.gameObject);
-	    }
-	}
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-	Debug.Log("exit");
-	if (other.gameObject.GetComponent<NavMeshAgent>() != null)
-	{
-	    lock(collidedAgents)
-	    {
-		collidedAgents.Remove(other.gameObject);
-		Debug.Log("agent exit" + collidedAgents.Count.ToString());
-		if (collidedAgents.Count == 0)
-		{
-		    agent.isStopped = false;
-		}
-	    }
+	    Debug.Log(name + "STOP");
+	    agent.enabled = false;
+	    obstacle.enabled = true;
 	}
 
     }
