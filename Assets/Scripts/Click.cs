@@ -22,7 +22,6 @@ public class Click : MonoBehaviour {
 	// rightclick
         if(Input.GetMouseButtonUp(1))
         {
-	    Debug.Log("right");
 	    // get clicked point in the world
 	    Physics.Raycast(
 		Camera.main.ScreenPointToRay(Input.mousePosition),
@@ -43,7 +42,6 @@ public class Click : MonoBehaviour {
 		Debug.LogError("couldn't find suitable point");
 		return;
 	    }
-	    Debug.Log(selectedObjects.Count);
 	    // move selected agents to point and reset selection
             if (selectedObjects.Count > 0)
             {
@@ -59,7 +57,6 @@ public class Click : MonoBehaviour {
 	// left click
         else if(Input.GetMouseButtonDown(0))
         {
-	    Debug.Log("left");
 	    // find clicked object
 	    var found = Physics.Raycast(
 		Camera.main.ScreenPointToRay(Input.mousePosition),
