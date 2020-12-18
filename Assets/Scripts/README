@@ -1,23 +1,19 @@
 A:
-I tried 3 different ways to accomplish breaking.
+For the new braking mechanism we recycled the one we made for the Animations project.
+it has a collider in front of the agent to detect how many agents are infront of it.
+if its within the stopping distance it will stop, or if its within K * neighboors
+distance it will also stop so that it doesn't keep trying to push through neigboors
+to get to the destiation. the size of the collider and this constant can be tuned
+for the agent size and how many their are.
 
-the first was to add a navMeshObstacle to the Agent object, which produced very
-glitchy results since the agent would try to teleported away because it considered
-itself an obstacle.
-
-The second, I tried to put a collider in front of the agent to detect if another agent
-was in front of it and set isStopped = false. this worked fairly well, but could result
-in a situation where if two agents faced eachother close up, they would be permanently stuck.
-
-The third was to use breaking distance in the navMeshAgent properties. by seting this higher
-an agent would be satisfied by only getting so close to a goal. the agents would push
-eachother a little bit to get in that distance but usualy it became stable and it wouldn't
-create a mosh pit around the destination point, this was the option we went with
-but we included the script for the second one so you could see.
+when an agent stops, it becomes an obstacle so that other agents move around them
+instead of pushing.
 
 B:
 another way to implement obstacle avoidance without carving is to bake the obstacle on
 to the nav mesh, and you can set the obstacle to a non walkable area.
+aditionally you can apply an obstacle force to the agent along with a navigation force
+to push it around the obstacle.
 
 C:
 Carving work well for on the fly navigation, because it updates the nav mesh and an
@@ -27,4 +23,6 @@ but an agent wouldn't be aware they could go around it on the nav mesh potential
 the main probelm with carving is performance, since the nav mesh is being updated a lot.
 if you used carving for everything it would slow down the simulation. in general carving
 is good if you have a few moving obstacles, and baking is excelent for static obstacles.
+the issue with a navigation+obstacle force for avoiding an obstical is that if the obstacle
+is concave the agent could be trapped in a local minima.
 

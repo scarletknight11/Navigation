@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3981350932955711949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7901123600065817327}
+  - component: {fileID: 6295842950283614281}
+  - component: {fileID: 3118046664255944446}
+  m_Layer: 8
+  m_Name: Viewer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7901123600065817327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3981350932955711949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.64}
+  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_Children: []
+  m_Father: {fileID: 5943915155161714562}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6295842950283614281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3981350932955711949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3118046664255944446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3981350932955711949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15383397e92781f80b06e2f0cad9c501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighboors: 0
 --- !u!1 &5943915155027569472
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,8 +164,9 @@ GameObject:
   - component: {fileID: 5943915155161714588}
   - component: {fileID: 5943915155161714591}
   - component: {fileID: 5943915155161714560}
-  - component: {fileID: 5943915155161714563}
-  - component: {fileID: 1070732902}
+  - component: {fileID: 4347434226184711741}
+  - component: {fileID: 3937713701335971838}
+  - component: {fileID: 4365737798971706882}
   m_Layer: 0
   m_Name: agent
   m_TagString: Untagged
@@ -127,6 +186,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5943915155027569473}
+  - {fileID: 7901123600065817327}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -198,14 +258,14 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5943915155161714590}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5000001
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1.8
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -213,7 +273,23 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5943915155161714563
+--- !u!208 &4347434226184711741
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5943915155161714590}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!114 &3937713701335971838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,15 +298,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5943915155161714590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b285944bf1af70c0a90e05da2d5f8a8e, type: 3}
+  m_Script: {fileID: 11500000, guid: dde67eed757540c4a843bc77c796543c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveTime: 4
-  waitTime: 1
-  deviation: 0.5
-  wanderZone: 4
-  minWander: 4
---- !u!114 &1070732902
+  highlightMaterial: {fileID: 2100000, guid: 741e921f294779943bbad39cb7a3b2a7, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: 6413520d2731af7b9a86e195b0f96562, type: 2}
+--- !u!114 &4365737798971706882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,8 +312,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5943915155161714590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 171945524d4586547ba5a65c204c65ec, type: 3}
+  m_Script: {fileID: 11500000, guid: cdd9cdf7a44e052eca66177322304052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  agent: {fileID: 5943915155161714560}
+  stopCoef: 1
+  stopDist: 1.1
