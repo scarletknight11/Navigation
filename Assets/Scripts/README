@@ -26,3 +26,11 @@ is good if you have a few moving obstacles, and baking is excelent for static ob
 the issue with a navigation+obstacle force for avoiding an obstical is that if the obstacle
 is concave the agent could be trapped in a local minima.
 
+changelog:
+*slightly better camera
+*- shift/space to lower works
+*multi select now works
+*added arrow keys obstacle (left/right)
+*added breaking mechanism
+add commit log
+video: 
