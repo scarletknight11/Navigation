@@ -31,10 +31,8 @@ public class BrakeController : MonoBehaviour
     {
 	neighboors = viewer.neighboors;
 	float dist = Vector3.Distance(transform.position, agent.destination);
-	Debug.Log(name + "| " + neighboors + " " + dist);
 	if (dist < stopCoef * neighboors || dist < stopDist)
 	{
-	    Debug.Log(name + "STOP");
 	    agent.enabled = false;
 	    obstacle.enabled = true;
 	}
