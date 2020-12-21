@@ -13,7 +13,6 @@ public class ClickOn : MonoBehaviour {
     private MeshRenderer myRend;
 
     private NavMeshAgent myNavMeshAgent;
-    private SelectionController mySelectionController;
     private BrakeController brake;
 
     private bool _selected = false;
@@ -34,7 +33,6 @@ public class ClickOn : MonoBehaviour {
     void Start()
     {
         myNavMeshAgent = GetComponent<NavMeshAgent>();
-        mySelectionController = FindObjectOfType<SelectionController>();
         myRend = GetComponent<MeshRenderer>();
 	brake = GetComponent<BrakeController>();
     }

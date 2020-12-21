@@ -1,0 +1,44 @@
+bf5f6d0 was mjrb, 7 hours ago, message: added changelog
+c0788ac was mjrb, 7 hours ago, message: remove logging from brake controller
+6fe648b was mjrb, 2 days ago, message: tune braking and update readme
+ebc92cc was mjrb, 3 days ago, message: add braking mechanism
+df1304e was mjrb, 3 days ago, message: move wall with arrow keys
+bccca1a was mjrb, 3 days ago, message: slightly better camera
+1a74746 was mjrb, 3 days ago, message: forgot to add these changes
+82988a5 was mjrb, 3 days ago, message: fix muti select
+f8e7f8b was Sanjit Singh, 5 days ago, message: pushing some extra files that didnt get pushed
+91452ff was Sanjit Singh, 5 days ago, message: Merge branch 'master' of https://github.com/scarletknight11/Navigation
+ed5abcc was Sanjit Singh, 5 days ago, message: can select and move multiple agents that i click on
+1023644 was Sanjit Singh, 5 days ago, message: stashed changes
+bdea6bc was Sanjit Singh, 6 days ago, message: fixed some minor issues with selecting agents
+7a8005a was Sanjit Singh, 3 months ago, message: more stuff getting pushed
+caf143b was Sanjit Singh, 3 months ago, message: Merge branch 'master' of https://github.com/scarletknight11/Navigation
+94a2dab was Sanjit Singh, 3 months ago, message: Added navmesh obstacle object you can move with arrows. selecting agent works but moving selected agent only 85% of it works. if I select multiple only the first agent selected will move first
+6bc0269 was mjrb, 3 months ago, message: added readme
+95922a9 was mjrb, 3 months ago, message: add other braking mechanism
+8569be1 was mjrb, 3 months ago, message: add obstacles with waypoints
+b4e166c was mjrb, 3 months ago, message: increase stopping distance to avoid mosh pit at destination
+0eb4e78 was mjrb, 3 months ago, message: Merge branch 'master' of github.com:scarletknight11/Navigation
+7c8cd0d was Sanjit Singh, 3 months ago, message: got object selecton working. now only object i select will move. just need to make mulitple selections work
+ab1c003 was mjrb, 3 months ago, message: make poop smellier
+a3aefdf was mjrb, 3 months ago, message: Merge branch 'master' of github.com:scarletknight11/Navigation
+a19c13e was mjrb, 3 months ago, message: poop zone
+83fb4d3 was Sanjit Singh, 3 months ago, message: Merge branch 'master' of https://github.com/scarletknight11/Navigation
+add52e6 was Sanjit Singh, 3 months ago, message: got object selection working
+8362bb0 was mjrb, 3 months ago, message: add some avoidance areas
+6280c10 was mjrb, 3 months ago, message: improved camera
+336a506 was mjrb, 3 months ago, message: stairs and new pad
+874838c was mjrb, 3 months ago, message: default to wandering off, and put the script in the agent prefab
+8f68de2 was mjrb, 3 months ago, message: Merge branch 'master' of github.com:scarletknight11/Navigation
+b7d4d99 was Sanjit Singh, 3 months ago, message: got mouse input working
+51f1677 was mjrb, 3 months ago, message: alt jump buttons
+732b7d4 was mjrb, 3 months ago, message: change to fbx
+0f9ed07 was mjrb, 3 months ago, message: jumpers and maze
+2c01d25 was mjrb, 3 months ago, message: ingore blender temp files
+daa4cda was mjrb, 3 months ago, message: more devel design
+5663782 was mjrb, 3 months ago, message: improve sampling
+7a866ec was mjrb, 3 months ago, message: add shotty camera controller
+05fefd0 was mjrb, 3 months ago, message: 5 wandering agents
+23345f5 was mjrb, 3 months ago, message: add emacs swap
+38381b9 was mjrb, 3 months ago, message: init unity
+0188cb3 was Sanjit Singh, 3 months ago, message: Initial commit
